@@ -2,7 +2,7 @@
 
 **Resources Sharing In Production:-**
 
-Our Primary Responsible to Protect Our Cluster With Allocation Of Resources With Multiple Teams With Multiple Namespaces With Proper Resource Quota, Limits, Restricting the Pod Resources Usage Limits by Using the Resources Quotas and Limits at Pod Level to Avoid Memory Leakage, didn`t Tolerate to Usage of Excess Resources in Pod Level and Namespace Level.
+--> Our Primary Responsible to Protect Our Cluster With Allocation Of Resources With Multiple Teams With Multiple Namespaces With Proper Resource Quota, Limits, Restricting the Pod Resources Usage Limits by Using the Resources Quotas and Limits at Pod Level to Avoid Memory Leakage, didn`t Tolerate to Usage of Excess Resources in Pod Level and Namespace Level.
 
 **Upgradations of Kubernetes:-**
 
