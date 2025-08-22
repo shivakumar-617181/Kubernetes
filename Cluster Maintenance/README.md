@@ -63,41 +63,38 @@ Deploy and Store Multi-Region / Multi-Cluster DR Infra and application Related f
 
 Configure Monitoring, Logging and Metrics Using Tools like Prometheus, Grafana, Jaeger, OpenTelemetry for Proactive and Reactive Incidents.
 
-Use Labels & Annotations To Organize workloads based On the env, app, owner, version.
+Use Labels & Annotations To Organize Workloads Based On the env, app, owner, version.
 
-Use Single Centralized CI/CD Tools like GitOps ArgoCD for controlled deployments.
+Use Single & Centralized CI/CD Tools like GitOps ArgoCD for Controlled Deployments.
 
-Use NGINX, HAProxy, or Istio Gateway for traffic management.
+Use NGINX, HAProxy, or Istio Gateway For Traffic Management.
 
 Maintaining the Proper ConfigMaps & Secrets
 
-Setup  Taints & tolerations for dedicated workloads in Node Maintance.
+Setup  Taints & Tolerations for Dedicated Workloads in Node Maintance.
 
 
+**Cluster Upgrades (Stability & Future-proofing)**
 
-Cluster Upgrades (Stability & Future-proofing)
+--> Perform And Plan regular upgrades Of Our Cluster.
 
-Perform And Plan regular upgrades Of Our Cluster.
-Perform ETCD & Control Plane Backups before upgrades.
+--> Perform ETCD & Control Plane Backups before upgrades.
 
-Stay close to latest minor release.
+--> Stay close to latest minor release with Official Release.
 
-Use Rolling Deployments to Avoid Downtime.
+--> Use Rolling Deployments to Avoid Downtime.
 
-Perform Regular CNI Plugin Upgrades
+--> Perform Regular CNI Plugin Upgrades
 
+**Cost Optimization For Our Cluster.**
 
+--> Use Spot Nodes For Running Non-Critical Workloads/Test of Workloads Cheaply.
 
-Cost Optimization For Our Cluster.
+--> Choose Correct Node Right-Sizing to Avoid Underutilized Large Nodes.
 
-Use Spot Nodes For Running non-critical workloads/Test of Workloads Cheaply.
+--> Configure Cluster Autoscaler with Consideration of Cost Saving.
 
+--> Use HPA with Custom Metrics scale Based On Real Demand.
 
-Choose Correct Node Right-Sizing to Avoid Underutilized Large Nodes.
-
-Configure Cluster Autoscaler with Consideration of Cost Saving.
-
-Use HPA with Custom Metrics scale Based On Real Demand.
-
-Delete Unused Resources like Old PVCs, LoadBalancers.
+--> Delete Unused Resources like Old PVCs, LoadBalancers.
 
