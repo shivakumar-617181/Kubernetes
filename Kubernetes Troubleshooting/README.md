@@ -8,7 +8,7 @@ For Checking the Pods Status
 
 **kubectl describe pod**
 
-Used too Describe the pods.
+Used to Describe the pods.
 
 **kubectl logs (podName)**
 
