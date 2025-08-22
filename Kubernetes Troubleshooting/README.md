@@ -1,6 +1,41 @@
 
-**A). Error In Pulling The Image Error Name- Image Pull back Off** 
---> Possible Reasons, 
+
+**The Below Commands are Majorly Used in Troubleshooting of Kubernetes Related Issues.:-**
+
+**kubectl get pods -o wide**
+
+For Checking the Pods Status
+
+**kubectl describe pod**
+
+Used too Describe the pods.
+
+**kubectl logs (podName)**
+
+To check the logs of the pods
+
+**kubectl get events --sort-by=.metadata.creationTimestamp**
+
+Used to check the events of Cluster in current namespace
+
+**Check node status**
+
+Used to Check Node Status
+
+**kubectl get svc,ep**
+
+This Command is Used to Check service Details & endpoints.
+
+**kubectl top**
+
+Check resource usage
+
+
+
+**A). Error In Pulling The Image Error Name- Image Pull back Off**
+
+--> Possible Reasons,
+
 1). Image Name Mismatch with Entered Name and Available Image In Registry.
 
 2). Authorization to Pull the Image If It is Present Inside the Private Repository. 
@@ -10,79 +45,62 @@
 
 **B). Container Went Into CrashLoopBackOff Status:-** 
 
-In General Behavior of the k8s/kubelet Is If any pod is Shutdown/Crashed Then kubelet Will Tries to Restart That Container. If Restated Successfully and Worked Fine then no Issues. If It Is Keep On Crashing After Restarting Pod Then the k8s pod State Will Goes Into The Crashloop backoff Status.
-This Situation Indicates That Issue With Application Code or Misconfigrations of Our Container.
-
-1). Mis Configurations:- Misconfigurations in application Code, Incorrect Environment Variables, Defination Of The Incorrect Secrets, Improper Setup of Ports (or) Volumes. Networking Issues, Dependencies.
-2). liveness probe is Incorrectly Configured.
-3). The Memory limits are too low
-4). If the application didn't get the enough resources like CPU, RAM then the Container Keeps on Restarting and wents into crash loop backoff
-5). Wrong Command Line Arguments:- It is Like Our Application Code Requires Some Specific Arguments But Different Environments are Passed. Then It Will Wents into Crash loop backoff
-Bugs Exceptions:- Due to The Bugs in The Applications Codes like Unhandled Exceptions (or) Segmentations faults.
+ --> In General Behavior of the k8s/kubelet, If Any Pod is Shutdown/Crashed Then kubelet Will Tries to Restart That Container. If Restated Successfully and Worked Fine then Their is No Issues. If It Is Keep On Crashing After Restarting Pod Then the k8s Pod State Will Goes Into The Crashloop Backoff Status.
  
-C0> Pod Went into Pending  Status what are Possible Reasons
+--> This Situation Indicates That Issue With Application Code or Misconfigrations of Our Container.
 
-1). Resource Constraints Requested CPU/Memory not available on any node.
-2). No Available Nodes All nodes are cordoned/drained.
-3). Unsatisfiable Node Selectors / Affinity Pod spec has nodeSelector nodeAffinity taints and tolerations
-4). Storage Issues (PVC Pending) Pod uses PersistentVolumeClaim (PVC) but no matching PersistentVolume (PV) exists.
-5). Error in Image Pull back Off 
-6). Network Policy / CNI Issues Pod cannot be scheduled because CNI (Calico/Flannel/etc.) is not configured properly. Usually happens in new clusters.
-7). Some Times Scheduler Pod is Not Running Kubernetes scheduler is not running or misconfigured.
+Possible Reasons:-
+
+1). Misconfigurations in Application Code, Incorrect Environment Variables, Defined The Incorrect Secrets, Improper Setup of Ports (or) Volumes. Networking Issues, Dependencies.
+
+2). liveness Probe is Incorrectly Configured.
+
+3). The Memory Limits Are Too Low.
+
+4). If The Application Didn't Get the Enough Resources like CPU, RAM Then the Container Keeps on Restarting and wents into crash loop backoff.
+
+5). Wrong Command Line Arguments Passed, It is Like Our Application Code Requires Some Specific Arguments But Different Environment Variables are Passed. Then It Will Goes into Crash loop backoff Status.
+
+6). Bugs Exceptions:- Due to The Bugs in The Applications Codes like Unhandled Exceptions (or) Segmentations faults.
+ 
+**C). Pod Went into Pending  Status what are Possible Reasons**
+
+--> Possible Reasons:-
+
+1). Resource Constraints Requested CPU/Memory Not Available at Node.
+2). No Available Nodes, (OR) All nodes are Cordoned/Drained/Tainted.
+3). Unsatisfiable Node Selectors / Affinity Pod spec has nodeSelector nodeAffinity Taints and Tolerations.
+4). Storage Issues (PVC Pending) Pod Uses PersistentVolumeClaim (PVC) but No matching PersistentVolume (PV) exists/Permissions.
+5). Error in Image Pull back Off.
+6). Network Policy / CNI Issues Pod Cannot be Scheduled Because of CNI (Calico/Flannel/etc.) is Not Configured Properly. Usually Happens in New Clusters.
+7). Some Times Scheduler Pod is Not Running State.
 
 
-D> Service Not Accessible
+**D> Service Not Accessible**
 
-1). Check 
-2). Check Load Balancer  Endpoints
-3). Check Labels and Selector related Service.
+1). Check Service Endpoints Related to pods.
+2). Check Labels and Selector related Service.
 
+**E>. Node is NotReady**
 
-E>. Node is NotReady
+Check Disk pressure, CPU,Memory pressure.
 
-Disk pressure → Free space or expand disk.
+Network plugin issue Solved By the Restarting the CNI DaemonSet.
 
-❌ Memory pressure → Scale nodes or optimize workloads.
+Check Kubelet Service Is Working.
 
-❌ Network plugin issue → Restart CNI DaemonSet.
-
-❌ Kubelet stopped → Restart kubelet service.
-
-F). Cluster DNS Issues
+**F). Cluster DNS Issues**
 
 Check logs of core DNS pod and Restart that pod
-kubectl rollout restart deployment coredns -n kube-system 
 
-g). ETCD / Control Plane Issues
+**G). ETCD / Control Plane Issues**
 
-Take ETCD backup regularly.
+Take ETCD Backup Regularly.
 
-Restart unhealthy control-plane pods.
+Restart Unhealthy Control Plane Pods.
 
-Verify certificates not expired (kubeadm certs check-expiration).
+Verify Certificates Not Expired
 
-
-If You know Below command perpectly then you can troobleshoot moset of the Kubernets Issues.
-
-Quick Troubleshooting Flow (Interview/On-call Ready)
-
-Check pod status → kubectl get pods -o wide.
-
-Describe pod → kubectl describe pod <pod>.
-
-Check logs → kubectl logs <pod>.
-
-Check events → kubectl get events --sort-by=.metadata.creationTimestamp.
-
-Check node status → kubectl get nodes.
-
-Check service & endpoints → kubectl get svc,ep.
-
-Check network policies / CNI logs.
-
-Check resource usage → kubectl top.
-
-Escalate to etcd / control plane if cluster-wide.
 
 
 M). Pod stuck in ContainerCreating
