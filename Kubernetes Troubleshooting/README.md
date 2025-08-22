@@ -1,8 +1,14 @@
 
-A). Problem:- Error in Image Pull back Off 
- ANS:-    possible reasons, 1). Image Name Mismatch with Entered Name and Available Image. Permission to pull the image RBAC If It is Present Inside the Private Repository. Issue with Registry authorization issue with secrets, to get the clarity about issue, use the commands like describe Pending Container or events command and fix that.
+**A). Error In Pulling The Image Error Name- Image Pull back Off** 
+--> Possible Reasons, 
+1). Image Name Mismatch with Entered Name and Available Image In Registry.
 
-B). You Container went into CrashLoopBackOff Staus:- 
+2). Authorization to Pull the Image If It is Present Inside the Private Repository. 
+
+3). Issue With Registry Authorization Issue With Kubernetes Secrets Manager,
+    To Get the Clarity About the Issue, Use the Commands Like Describe Pending Container or Events Command and Fix That Issue.
+
+**B). Container Went Into CrashLoopBackOff Status:-** 
 
 In General Behavior of the k8s/kubelet Is If any pod is Shutdown/Crashed Then kubelet Will Tries to Restart That Container. If Restated Successfully and Worked Fine then no Issues. If It Is Keep On Crashing After Restarting Pod Then the k8s pod State Will Goes Into The Crashloop backoff Status.
 This Situation Indicates That Issue With Application Code or Misconfigrations of Our Container.
