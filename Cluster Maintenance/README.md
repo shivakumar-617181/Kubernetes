@@ -6,31 +6,31 @@
 
 **Upgradations of Kubernetes:-**
 
-We Have to Perform Upgarades of Our Cluster at Very Regular Interval of the time. Firstly, Go Through The Proper Release Documentation of That Upgrade Version Of Each Components of the Control Plane, Worker Components. and Publish The Information In Internal Teams and Notify To The Stack Holders, If Their is any Significant Change, or Change Version According Upgraded Version.
+--> We Have to Perform Upgarades of Our Cluster at Very Regular Interval of the time. Firstly, Go Through The Proper Release Documentation of That Upgrade Version Of Each Components of the Control Plane, Worker Components. and Publish The Information In Internal Teams and Notify To The Stack Holders, If Their is any Significant Change, or Change Version According Upgraded Version.
 
 **Procedure for Upgradation:-** 
 
 **Step1:-**
 
-Drain the node.:- By These Pods Will Moves to Available Nodes, after Conforming the Node is Empty/Cardon Then make that Make that Node as Unschedulable. and After that We Will Install The Latest Versions of the Kubelet, Kubeproxy Container Runtime. If You Are Going With Cloud Managed Cluster then the Installation of the Each Componenet is not required. Cloud Provider will do these for Us.
+--> Drain the node.:- By These Pods Will Moves to Available Nodes, after Conforming the Node is Empty/Cardon Then make that Make that Node as Unschedulable. and After that We Will Install The Latest Versions of the Kubelet, Kubeproxy Container Runtime. If You Are Going With Cloud Managed Cluster then the Installation of the Each Componenet is not required. Cloud Provider will do these for Us.
 
-For Self Manged Cluster After Installation Completed Verify With Versions and Make the Pod Sechdulable.
+--> For Self Manged Cluster After Installation Completed Verify With Versions and Make the Pod Sechdulable.
 
-Repeat The Same Procedure For all the Nodes and Master Components.
+--> Repeat The Same Procedure For all the Nodes and Master Components.
 
-Prepare a Detailed Documentation as Per The Procedure. 
+--> Prepare a Detailed Documentation as Per The Procedure. 
 
 **Better Cluster Performance & Efficiency:-**
 
-Select Right-Size Nodes That Matches Instance Sizes to Workloads.
+--> Select Right-Size Nodes That Matches Instance Sizes to Workloads.
 
-Use Requests & Limits At Namespace Level & Pod Level.
+--> Use Requests & Limits At Namespace Level & Pod Level.
 
-Configure Autoscaling For Workloads like HPA (Horizontal Pod Autoscaler) & Node Auto Scalar:-  It will Scales the pods Based on CPU/Memory/Custom Metrics. Cluster Autoscaler It will Scales the Nodes Automatically Based On The Metrics.
+--> Configure Autoscaling For Workloads like HPA (Horizontal Pod Autoscaler) & Node Auto Scalar:-  It will Scales the pods Based on CPU/Memory/Custom Metrics. Cluster Autoscaler It will Scales the Nodes Automatically Based On The Metrics.
 
-Use Separate Separate Namespaces Separate Workloads Logically for Better Organization and Resource Quotas.
+--> Use Separate Separate Namespaces Separate Workloads Logically for Better Organization and Resource Quotas.
 
-Optimize Docker Images Use Lightweight Images (alpine, distroless) to Reduce Attack Surface & Startup Time.
+--> Optimize Docker Images Use Lightweight Images (alpine, distroless) to Reduce Attack Surface & Startup Time.
 
 
 **Cluster Protection (Security & Reliability):-**
