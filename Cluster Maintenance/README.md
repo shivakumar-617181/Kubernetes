@@ -35,43 +35,43 @@
 
 **Cluster Protection (Security & Reliability):-**
 
-Grant Least Privilege to Users/Service Accounts Using RBAC (Role-Based Access Control).
+--> Grant Least Privilege to Users/Service Accounts Using RBAC (Role-Based Access Control).
 
-Configure Network Policies To Restrict Pod-to-Pod & Pod-to-External Communication.
+--> Configure Network Policies To Restrict Pod-to-Pod & Pod-to-External Communication.
 
-Store Secrets securely using HashiCorp Vault, KMS etc
+--> Store Secrets securely using HashiCorp Vault, KMS etc
 
-Maintain Pod Security Standards Using Prevent root containers, Drop Privileges.
+--> Maintain Pod Security Standards Using Prevent root containers, Drop Privileges.
 
-Enable Audit Logging For Track Cluster Access & Activities.
+--> Enable Audit Logging For Track Cluster Access & Activities.
 
-Perform Regular Security Scanning
+--> Perform Regular Security Scanning
 
-Scan Container Images Using Tools like Trivy, Anchore For Any Vulnerabilities On Regular Basis.
+--> Scan Container Images Using Tools like Trivy, Anchore For Any Vulnerabilities On Regular Basis.
 
 **Configure Backup & Disaster Recovery:**
 
-Take The Regular ETCD Backups & Persistent Volume Backups.
+--> Take The Regular ETCD Backups & Persistent Volume Backups.
 
-Configure Cluster-Level DR, FailOver Groups. And Maintain multi-master HA control plane across availability zones.
+--> Configure Cluster-Level DR, FailOver Groups. And Maintain multi-master HA control plane across availability zones.
 
-Configure Application-Level DR via Stateful apps, Stateless apps via Manifests and PVC snapshots.
+--> Configure Application-Level DR via Stateful apps, Stateless apps via Manifests and PVC snapshots.
 
-Deploy and Store Multi-Region / Multi-Cluster DR Infra and application Related files Using Cloud Native Services like Storage, Replication Methods and Some Third Party Tools Terraform and Ansible.
+--> Deploy and Store Multi-Region / Multi-Cluster DR Infra and application Related files Using Cloud Native Services like Storage, Replication Methods and Some Third Party Tools Terraform and Ansible.
 
 **Cluster Management (Operations & Observability)**
 
-Configure Monitoring, Logging and Metrics Using Tools like Prometheus, Grafana, Jaeger, OpenTelemetry for Proactive and Reactive Incidents.
+--> Configure Monitoring, Logging and Metrics Using Tools like Prometheus, Grafana, Jaeger, OpenTelemetry for Proactive and Reactive Incidents.
 
-Use Labels & Annotations To Organize Workloads Based On the env, app, owner, version.
+--> Use Labels & Annotations To Organize Workloads Based On the env, app, owner, version.
 
-Use Single & Centralized CI/CD Tools like GitOps ArgoCD for Controlled Deployments.
+--> Use Single & Centralized CI/CD Tools like GitOps ArgoCD for Controlled Deployments.
 
-Use NGINX, HAProxy, or Istio Gateway For Traffic Management.
+--> Use NGINX, HAProxy, or Istio Gateway For Traffic Management.
 
-Maintaining the Proper ConfigMaps & Secrets
+--> Maintaining the Proper ConfigMaps & Secrets
 
-Setup  Taints & Tolerations for Dedicated Workloads in Node Maintance.
+--> Setup  Taints & Tolerations for Dedicated Workloads in Node Maintance.
 
 
 **Cluster Upgrades (Stability & Future-proofing)**
