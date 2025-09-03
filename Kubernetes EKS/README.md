@@ -2,6 +2,8 @@ Amazon EKS is a Managed Kubernetes Service by AWS That Makes It Easy to Deploy, 
 
 **Features of EKS:-**
 
+EKS It Is Managed Service by AWS Cloud.
+
 1). Fully Managed Control Plane, Nodes Components
 
 2). Supports Auto-scaling of Nodes & Fargate (serverless containers)
