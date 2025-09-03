@@ -49,7 +49,7 @@ Check resource usage
  
 --> This Situation Indicates That Issue With Application Code or Misconfigrations of Our Container.
 
-Possible Reasons:-
+**Possible Reasons:-**
 
 1). Misconfigurations in Application Code, Incorrect Environment Variables, Defined The Incorrect Secrets, Improper Setup of Ports (or) Volumes. Networking Issues, Dependencies.
 
